@@ -6,7 +6,7 @@ namespace Practice
     {
         static void Main(string[] args)
         {
-            var game = new GameGuess(Mode.ComputerVSPlayer);            
+            var game = new TicTacToe();            
         }
     }
 }
