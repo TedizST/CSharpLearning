@@ -47,8 +47,7 @@ namespace Practice
 
                 if (!IsRight())
                 {
-                    _attempts--;
-                    Console.WriteLine($"Вы ошиблись!\nПопыток осталось: {_attempts}");
+                    Console.WriteLine($"Вы ошиблись!\nПопыток осталось: {--_attempts}");
                 }
 
                 PrintWord();
