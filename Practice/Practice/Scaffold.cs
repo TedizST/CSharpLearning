@@ -39,7 +39,6 @@ namespace Practice
         private void Game()
         {
             int count = 0;
-            bool endGame = false;
 
             while (_attempts > 0)
             {
@@ -56,7 +55,6 @@ namespace Practice
                 {
                     if (IsWin())
                     {
-                        endGame = true;
                         Win();
                         return;
                     }
@@ -64,11 +62,8 @@ namespace Practice
                 
             }
 
-            if (!endGame)
-            {
-                Lose();
-                return;
-            }                
+        Lose();
+        return;               
         }
 
         private void GetLetter()

@@ -41,8 +41,6 @@ namespace Practice
 
         private void Game()
         {
-            bool endGame = false;
-
             for (int i = 0; i < 9; i++)
             {
                 PlayerTurn();
@@ -50,21 +48,18 @@ namespace Practice
                 {
                     if (IsWin())
                     {
-                        endGame = true;
                         PrintFields();
                         Win();
-                        break;
+                        return;
                     }
                 }
 
                 PrintFields();
                 _flag = !_flag;
             }
-
-            if (!endGame)
-            {
-                Draw();
-            }
+                     
+        Draw();
+        return;         
         }
 
         private void PlayerTurn()
@@ -75,7 +70,7 @@ namespace Practice
                 if (IsValid(out int item))
                 {
                     _fields[--item] = _signs[BoolToInt[_flag]];
-                    break;
+                    return;
                 }
                 else
                 {
@@ -88,12 +83,14 @@ namespace Practice
         {
             Console.WriteLine($"The {this._players[BoolToInt[this._flag]]} is a winner!");
             Restart();
+            return;
         }
 
         private void Draw()
         {
             Console.WriteLine("The game ended in a draw.");
             Restart();
+            return;
         }
 
         private void Restart()
@@ -106,11 +103,11 @@ namespace Practice
                 if (answer == "yes")
                 {
                     StartGame();
-                    break;
+                    return;
                 }
                 else if (answer == "no")
                 {
-                    break;
+                    return;
                 }
             }
         }

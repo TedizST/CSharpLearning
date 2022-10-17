@@ -35,10 +35,10 @@ namespace Practice.GuessNumber
             {
                 case Mode.PlayerVSComputer:
                     ComputerMakesGuess();
-                    break;
+                    return;
                 case Mode.ComputerVSPlayer:
                     PlayerMakesGuess();
-                    break;
+                    return;
             }
         }
 
@@ -99,7 +99,7 @@ namespace Practice.GuessNumber
                 {
                     this.Number = item;
                     ComputerGuesses();
-                    break;                    
+                    return;
                 }
                 else
                 {
@@ -130,7 +130,7 @@ namespace Practice.GuessNumber
                 {
                     Console.WriteLine("Ah, it's right. You lost!");
                     Restart();
-                    break;
+                    return;
                 }
                 else if (this._guess > this.Number)
                 {
@@ -165,11 +165,11 @@ namespace Practice.GuessNumber
                 if (answer == "yes")
                 {
                     StartGame();
-                    break;
+                    return;
                 }
                 else if (answer == "no")
                 {
-                    break;
+                    return;
                 }
             }
         }
